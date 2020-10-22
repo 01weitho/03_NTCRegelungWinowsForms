@@ -43,9 +43,13 @@
             this.cb_Ports = new System.Windows.Forms.ComboBox();
             this.btn_Ports = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_Recieved = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbl_sent = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pb)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -173,24 +177,63 @@
             this.btn_close.Text = "Close";
             this.btn_close.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pb
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(222, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(925, 527);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.pb.Location = new System.Drawing.Point(222, 13);
+            this.pb.Name = "pb";
+            this.pb.Size = new System.Drawing.Size(925, 527);
+            this.pb.TabIndex = 14;
+            this.pb.TabStop = false;
+            this.pb.SizeChanged += new System.EventHandler(this.pb_SizeChanged);
             // 
             // serialPort1
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 450);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 17);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Recieved Data:";
+            // 
+            // lbl_Recieved
+            // 
+            this.lbl_Recieved.AutoSize = true;
+            this.lbl_Recieved.Location = new System.Drawing.Point(15, 470);
+            this.lbl_Recieved.Name = "lbl_Recieved";
+            this.lbl_Recieved.Size = new System.Drawing.Size(0, 17);
+            this.lbl_Recieved.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 500);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Sent Data:";
+            // 
+            // lbl_sent
+            // 
+            this.lbl_sent.AutoSize = true;
+            this.lbl_sent.Location = new System.Drawing.Point(15, 520);
+            this.lbl_sent.Name = "lbl_sent";
+            this.lbl_sent.Size = new System.Drawing.Size(0, 17);
+            this.lbl_sent.TabIndex = 18;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1209, 590);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbl_sent);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lbl_Recieved);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pb);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_Ports);
             this.Controls.Add(this.cb_Ports);
@@ -207,7 +250,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,8 +272,12 @@
         private System.Windows.Forms.ComboBox cb_Ports;
         private System.Windows.Forms.Button btn_Ports;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_Recieved;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_sent;
     }
 }
 
